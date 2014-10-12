@@ -1,0 +1,86 @@
+#
+#
+# anonymous namespace
+snippet nsa
+	namespace  {
+
+
+	${1}
+
+
+	}	// end anonymous namespace
+#
+#
+# namespace
+snippet ns
+	namespace ${1:name}  {
+
+
+	${2}
+
+
+	}	// end $1 namespace
+#
+#
+# two nested namespaces
+snippet ns2
+	namespace ${1:name1}  {  namespace ${2:name2}  {
+
+
+	${3}
+
+
+	} }	// end $1::$2 namespace
+#
+#
+# three nested namespaces
+snippet ns3
+	namespace ${1:name1}  {  namespace ${2:name2}  {  namespace ${3:name3}  {
+
+
+	${4}
+
+
+	} } }	// end $1::$2::$3 namespace
+#
+#
+# four nested namespaces
+snippet ns4
+	namespace ${1:name1}  {  namespace ${2:name2}  {  namespace ${3:name3}  {  namespace ${4:name4}  {
+
+
+	${5}
+
+
+	} } } }	// end $1::$2::$3::$4 namespace
+#
+#
+# header initialization
+snippet hppinit
+	/******************************************************************************
+
+		File:			${1}`Filename("$1.hpp")`
+		Author:			`g:snips_author`
+		Description:	${2:TODO: add description}
+
+	******************************************************************************/
+
+	#ifndef ${3:}`toupper(Filename("$1_HPP_INCLUDED"))`
+	#define $3`toupper(Filename("$1_HPP_INCLUDED"))`
+
+	${4}
+
+	#endif // $3`toupper(Filename("$1_HPP_INCLUDED"))`
+#
+#
+# source file initialization
+snippet cppinit
+	/******************************************************************************
+
+		File:			${1}`Filename("$1.cpp")`
+		Author:			`g:snips_author`
+		Description:	${2:TODO: add description}
+
+	******************************************************************************/
+
+	${3}
