@@ -4,7 +4,7 @@ setenv PATH /usr/local/bin:$PATH
 setenv CLICOLOR 1
 setenv LSCOLORS dxgxxxxxbxxxxxbxbxdxdx
 setenv LS_COLORS di=33:ex=31
-setenv LESSHISTFILEi -
+setenv LESSHISTFILE -
 
 alias la ls -a
 
