@@ -1,9 +1,10 @@
 set prompt='%B[%m]%c1%#%b '
+set color
 
 setenv PATH /usr/local/bin:$PATH
 setenv CLICOLOR 1
 setenv LSCOLORS dxgxxxxxbxxxxxbxbxdxdx
-setenv LS_COLORS di=33:ex=31
+setenv LS_COLORS di=33:ex=31:ln=36
 setenv LESSHISTFILE -
 
 alias la ls -a
@@ -13,7 +14,6 @@ if ($?prompt) then
 	set savehist=100
 	set histfile=~/.tmp/tcsh/history
 	set histdup='prev'
-	set color
 	set autoexpand
 	set autolist='ambiguous'
 
