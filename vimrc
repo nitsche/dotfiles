@@ -24,7 +24,8 @@ set viminfo+=n~/.tmp/vim/viminfo
 
 set guioptions-=T
 set guioptions-=L
-set guifont=Courier\ New:h12
+" set guifont=Courier\ New:h12
+set guifont=Consolas:h12
 set guicursor+=a:blinkon0
 
 set t_Co=256
@@ -52,6 +53,8 @@ let mapleader=','
 " plugin settings
 let g:netrw_home = expand('~/.vim/.cache')
 let g:snips_author = 'Thomas Nitsche'
+let g:AutoPairsCenterLine = 0
+let g:AutoPairsMapSpace = 0
 let g:vproj_project_path = '~/src/%project%/.proj/vim/%project%.vproj'
 
 

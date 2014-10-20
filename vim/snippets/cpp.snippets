@@ -84,3 +84,54 @@ snippet cppinit
 	******************************************************************************/
 
 	${3}
+#
+#
+# class
+snippet class
+	class ${1:name}
+		{
+			${2}
+		};
+#
+#
+# struct
+snippet struct
+	struct ${1:name}
+		{
+			${2}
+		};
+#
+#
+# tclass
+snippet tclass
+	template<${1:tparams}>
+		class ${2:name}
+		{
+			${3}
+		};
+#
+#
+# tstruct
+snippet tstruct
+	template<${1:tparams}>
+		struct ${2:name}
+		{
+			${3}
+		};
+#
+#
+# func
+snippet func
+	${1:void} ${2:name}(${3:params})${4}
+		{
+			${5}
+		}
+#
+#
+# tfunc
+snippet tfunc
+	template<${1:tparams}>
+		${2:void} ${3:name}(${4:params})${5}
+		{
+			${6}
+		}
