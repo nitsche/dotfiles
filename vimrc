@@ -1,5 +1,8 @@
+let g:pathogen_disabled = []
+if !has('gui_running')
+		call add(g:pathogen_disabled, 'YouCompleteMe')
+endif
 sil! call pathogen#infect('bundle')
-
 
 set nocompatible
 set history=128
@@ -18,6 +21,7 @@ set shiftwidth=4
 set display=lastline
 set backspace=indent,eol,start
 set complete-=i		" could be slow
+set completeopt-=preview
 
 set directory=~/.tmp/vim/swp/
 set viminfo+=n~/.tmp/vim/viminfo
@@ -40,31 +44,42 @@ filetype plugin indent on
 syntax on
 color fbdark
 
-
 " mappings
 vnoremap < <gv
 vnoremap > >gv
 
-
 " vim settings
 let mapleader=','
 
-
 " plugin settings
 let g:netrw_home = expand('~/.vim/.cache')
-let g:snips_author = 'Thomas Nitsche'
-let g:AutoPairsCenterLine = 0
-let g:AutoPairsMapSpace = 0
-let g:vproj_project_path = '~/src/%project%/.proj/vim/%project%.vproj'
 
+let g:vimfiler_tree_leaf_icon = ' '
+let g:vimfiler_file_icon = ' '
+let g:vimfiler_tree_opened_icon = '▾'
+let g:vimfiler_tree_closed_icon = '▸'
+let g:vimfiler_readonly_file_icon = '✗'
+let g:vimfiler_marked_file_icon = '✓'
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_fmt_command = 'goimports'
+
+call vimfiler#custom#profile('default', 'context', {
+	\ 'safe': 0,
+	\ })
+
+au FileType go nmap <Leader>r <Plug>(go-rename)
+au FileType go nmap <Leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>d <Plug>(go-def)
 
 " commands
 comm -nargs=0 LowContrast  call <SID>set_high_contrast(0)
 comm -nargs=0 HighContrast call <SID>set_high_contrast(1)
 
-
-
-
+" key mappings
+noremap <C-f> :VimFiler<CR>
 
 " helper functions
 fu s:set_high_contrast(high)
