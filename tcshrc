@@ -1,7 +1,7 @@
 setenv GOPATH $HOME/dev/go
 setenv PATH /usr/local/bin:`go env GOROOT`/bin:$GOPATH/bin:$PATH
 
-set prompt='%{\033[1;32m%}%c03 %#%{\033[0m%} '
+set prompt='%{\033[1;32m%}%c03%{\033[0m%} %B%#%b '
 set color
 
 setenv CLICOLOR 1
