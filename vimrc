@@ -52,7 +52,7 @@ vnoremap > >gv
 let mapleader=','
 
 " plugin settings
-let g:netrw_home = expand('~/.vim/.cache')
+let g:netrw_home = expand('~/.tmp/vim')
 
 let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_file_icon = ' '
