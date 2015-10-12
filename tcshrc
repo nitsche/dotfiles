@@ -14,7 +14,7 @@ alias la ls -a
 
 
 if ($?prompt) then
-	set savehist=100
+	set savehist=(100 merge)
 	set histfile=~/.tmp/tcsh/history
 	set histdup='prev'
 	set autoexpand
