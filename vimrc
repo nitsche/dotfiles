@@ -28,11 +28,11 @@ set viminfo+=n~/.tmp/vim/viminfo
 
 set guioptions-=T
 set guioptions-=L
-" set guifont=Courier\ New:h12
-set guifont=Consolas:h12
+set guifont=Consolas:h12,Courier\ New:h12
 set guicursor+=a:blinkon0
 
 set t_Co=256
+set bg=dark
 
 if has('statusline')
 	set statusline=%<%F%(\ %M%R%)%(\ \ [%Y]%)%=line\ %l/%L
@@ -42,7 +42,7 @@ endif
 scriptencoding utf-8
 filetype plugin indent on
 syntax on
-color fbdark
+color greenimal
 
 " mappings
 vnoremap < <gv
@@ -61,35 +61,23 @@ let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_readonly_file_icon = '✗'
 let g:vimfiler_marked_file_icon = '✓'
 
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
+let g:go_highlight_functions = 0
+let g:go_highlight_methods = 0
+let g:go_highlight_structs = 0
+let g:go_highlight_operators = 0
+let g:go_highlight_extra_types = 0
+let g:go_fmt_autosave = 1
 let g:go_fmt_command = 'goimports'
+let g:go_def_mapping_enabled = 0
 
 call vimfiler#custom#profile('default', 'context', {
 	\ 'safe': 0,
 	\ })
 
+au FileType qf wincmd J " open QuickFix horizontally
 au FileType go nmap <Leader>r <Plug>(go-rename)
 au FileType go nmap <Leader>c <Plug>(go-coverage)
 au FileType go nmap <Leader>d <Plug>(go-def)
 
-" commands
-comm -nargs=0 LowContrast  call <SID>set_high_contrast(0)
-comm -nargs=0 HighContrast call <SID>set_high_contrast(1)
-
 " key mappings
 noremap <C-f> :VimFiler<CR>
-
-" helper functions
-fu s:set_high_contrast(high)
-	if !exists('g:colors_name')
-		return
-	elseif !exists('g:high_contrast')
-		let g:high_contrast = 0
-	endif
-	if a:high != g:high_contrast
-		let g:high_contrast = a:high
-		exe 'color '.g:colors_name
-	endif
-endf
