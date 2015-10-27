@@ -63,7 +63,7 @@ let s:scheme = {
 \	'SignColumn':     {'guifg': s:nontextfg.gui, 'guibg': s:nontextbg.gui, 'ctermfg': s:nontextfg.term, 'ctermbg': s:nontextbg.term},
 \	'IncSearch':      {'guifg': s:hilite.gui, 'gui': 'none', 'ctermfg': s:hilite.term, 'cterm': 'none'},
 \	'LineNr':         {'guifg': s:nontextfg.gui, 'guibg': s:nontextbg.gui, 'ctermfg': s:nontextfg.term, 'ctermbg': s:nontextbg.term},
-\	'MatchParen':     {'guifg': 'background', 'guibg': s:hilite.gui, 'gui': 'bold', 'ctermfg': s:bg.term, 'ctermbg': s:hilite.term, 'cterm': 'bold'},
+\	'MatchParen':     {'guifg': s:hilite.gui, 'guibg': 'background', 'gui': 'bold', 'ctermfg': s:hilite.term, 'ctermbg': s:bg.term, 'cterm': 'bold'},
 \	'ModeMsg':        {'guifg': s:prompt.gui, 'gui': 'none', 'ctermfg': s:prompt.term, 'cterm': 'none'},
 \	'MoreMsg':        {'guifg': s:prompt.gui, 'gui': 'bold', 'ctermfg': s:prompt.term, 'cterm': 'bold'},
 \	'NonText':        {'guifg': s:nontextfg.gui, 'ctermfg': s:nontextfg.term},
