@@ -1,3 +1,5 @@
+"set shell=/bin/sh
+
 let g:pathogen_disabled = []
 if !has('gui_running')
 		call add(g:pathogen_disabled, 'YouCompleteMe')
@@ -32,10 +34,10 @@ set guifont=Consolas:h12,Courier\ New:h12
 set guicursor+=a:blinkon0
 
 set t_Co=256
-set bg=dark
+set bg=light
 
 if has('statusline')
-	set statusline=%<%F%(\ %M%R%)%(\ \ [%Y]%)%=line\ %l/%L
+	set statusline=%<%F%(\ %M%R%)%(\ \ [%Y]%)%=%5l:%-4c\ %3p%%
 	set laststatus=2
 endif
 
@@ -76,8 +78,9 @@ call vimfiler#custom#profile('default', 'context', {
 
 au FileType qf wincmd J " open QuickFix horizontally
 au FileType go nmap <Leader>r <Plug>(go-rename)
-au FileType go nmap <Leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 au FileType go nmap <Leader>d <Plug>(go-def)
+au FileType go nmap <Leader>i <Plug>(go-info)
 
 " key mappings
 noremap <C-f> :VimFiler<CR>
